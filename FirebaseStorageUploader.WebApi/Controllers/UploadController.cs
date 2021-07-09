@@ -101,6 +101,8 @@ namespace FirebaseStorageUploader.WebApi.Controllers
 
         uploadedFileLink = upload.GetAwaiter().GetResult();
 
+        System.IO.File.Delete(uploadedFilePath);
+
         return Ok(new { Ok = uploadedFileLink });
       }
     }
